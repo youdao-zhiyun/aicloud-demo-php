@@ -16,13 +16,11 @@ function create_request()
      * 取值参考文档: https://ai.youdao.com/DOCSIRMA/html/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90TTS/API%E6%96%87%E6%A1%A3/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%E6%9C%8D%E5%8A%A1/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90%E6%9C%8D%E5%8A%A1-API%E6%96%87%E6%A1%A3.html
      */
     $q = "待合成文本";
-    $langType = "语言类型";
-    $voice = "音色编号";
+    $voiceName = "发言人名称";
     $format = "mp3";
 
     $params = array('q' => $q,
-        'langType' => $langType,
-        'voice' => $voice,
+        'voiceName' => $voiceName,
         'format' => $format);
     $params = add_auth_params($params, APP_KEY, APP_SECRET);
     $r = do_call('https://openapi.youdao.com/ttsapi', 'post', array(), $params, 'audio');
