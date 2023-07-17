@@ -22,7 +22,7 @@ function create_request()
     $q = read_file_as_base64(PATH);
     $params = array('q' => $q,
         'docType' => $docType,
-        'imageType' => $type,
+        'imageType' => $imageType,
     );
 
     $params = add_auth_params($params, APP_KEY, APP_SECRET);
