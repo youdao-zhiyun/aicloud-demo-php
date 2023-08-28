@@ -40,7 +40,7 @@ function get_input($q)
         return null;
     }
     $len = mb_strlen($q, 'utf-8');
-    return $len <= 20 ? $q : (AuthV3Util . phpmb_substr($q, 0, 10) . $len . mb_substr($q, $len - 10, $len));
+    return $len <= 20 ? $q : (mb_substr($q, 0, 10) . $len . mb_substr($q, $len - 10, $len));
 }
 
 ?>
